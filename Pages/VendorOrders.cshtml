@@ -1,0 +1,36 @@
+﻿@page
+@model NomNom.Web.Pages.VendorOrdersModel
+@{
+    ViewData["Title"] = "Vendor Orders";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Vendor Orders</h2>
+
+    @if (Model.Orders != null && Model.Orders.Any())
+    {
+        @foreach (var order in Model.Orders)
+        {
+            <div class="card mb-3">
+                <div class="card-header">
+                    <a asp-page="/FulfillOrder" asp-route-id="@order.OrderId" class="text-decoration-none text-dark">Order #@order.OrderId</a>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><strong>Status:</strong> @order.Status</p>
+                    <ul class="list-group list-group-flush">
+                        @foreach (var grilledCheese in order.GrilledCheeses)
+                        {
+                            <li class="list-group-item">Grilled Cheese #@grilledCheese.GrilledCheeseId</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            There are no orders.
+        </div>
+    }
+</div>

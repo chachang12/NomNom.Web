@@ -1,0 +1,76 @@
+﻿@page
+@model NomNom.Web.Pages.OrderModel
+@{
+}
+
+<h1 class="text-center">Order</h1>
+
+<style>
+    form {
+        width: 50%; /* Adjust as needed */
+        margin: auto;
+    }
+
+        form div {
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+    select {
+        border-radius: 5px; /* Adjust as needed */
+    }
+</style>
+
+<form method="post">
+    <div>
+        <label asp-for="GrilledCheeseObj.Bread">Choose a bread:</label>
+        <select asp-for="GrilledCheeseObj.Bread">
+            <option value="white">White</option>
+            <option value="wholewheat">Whole Wheat</option>
+            <option value="sourdough">Sourdough</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="GrilledCheeseObj.Cheese">Choose a cheese:</label>
+        <select asp-for="GrilledCheeseObj.Cheese">
+            <option value="cheddar">Cheddar</option>
+            <option value="mozzarella">Mozzarella</option>
+            <option value="swiss">Swiss</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="GrilledCheeseObj.Butter">Choose butter:</label>
+        <select asp-for="GrilledCheeseObj.Butter">
+            <option value="salted">Salted</option>
+            <option value="garlicRosemary">Garlic Rosemary</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="GrilledCheeseObj.Extras">Choose any extras:</label>
+        <select asp-for="GrilledCheeseObj.Extras">
+            <option value="tomatos">Tomatos</option>
+            <option value="blackPepper">Black Pepper</option>
+            <option value="basil">Basil</option>
+            <option value="none">None</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="GrilledCheeseObj.Condiments">Choose any Condiments:</label>
+        <select asp-for="GrilledCheeseObj.Condiments">
+            <option value="honey">Honey</option>
+            <option value="sirachaMayo">Siracha Mayo</option>
+            <option value="none">None</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>

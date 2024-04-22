@@ -1,0 +1,25 @@
+﻿@page
+@model NomNom.Web.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h1 class="text-center">Welcome Admin</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to NomNom Grilled Cheese!</h1>
+    <p class="lead">Order a grilled cheese for pick up today.</p>
+    <hr class="my-4">
+    
+</div>
+
+<div class="text-center">
+    <h2>Get Started</h2>
+    <div class="row justify-content-center">
+
+        
+        
+
+        @if (User.IsInRole("client") || User.IsInRole("admin"))
+        {
+        <div class="col-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Previous Orders</div>
+                <div class="card-body">
+                    <h5 class="card-title">Previous Orders</h5>
+                    <p class="card-text">View your previous and current orders.</p>
+                    <a href="/ClientOrders" class="btn btn-light">Grilled Cheese Orders</a>
+                </div>
+            </div>
+        </div>
+        }
+
+        @if (User.IsInRole("vendor") || User.IsInRole("admin"))
+        {
+        <div class="col-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Pending Orders</div>
+                <div class="card-body">
+                    <h5 class="card-title">Pending Orders</h5>
+                    <p class="card-text">View pending orders in need of completion.</p>
+                        <a href="/VendorOrders" class="btn btn-light">Grilled Cheese Orders</a>
+                </div>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>
